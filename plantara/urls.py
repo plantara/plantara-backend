@@ -16,10 +16,9 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework.authtoken import views as authtoken_views
 from rest_framework.routers import DefaultRouter
 
-from plantara.contrib.users.views import UserViewSet
+from plantara.contrib.users.views import UserViewSet, ObtainAuthToken
 from plantara.contrib.plants.views import PlantViewSet
 
 
@@ -32,7 +31,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include(router.urls)),
     path("api/auth/", include("rest_framework.urls")),
-    path("api/token/", authtoken_views.obtain_auth_token),
+    path("api/token/", ObtainAuthToken.as_view()),
 ]
 
 if settings.DEBUG:
