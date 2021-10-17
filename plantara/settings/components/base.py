@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     # Project apps
     "plantara",
     "plantara.contrib.users.apps.UsersConfig",
+    "plantara.contrib.plants.apps.PlantsConfig",
 ]
 
 ROOT_URLCONF = "plantara.urls"

@@ -19,10 +19,13 @@ from django.urls import include, path
 from rest_framework.authtoken import views as authtoken_views
 from rest_framework.routers import DefaultRouter
 
+from plantara.contrib.plants.views import PlantViewSet
 from plantara.contrib.users.views import UserViewSet
 
 router = DefaultRouter()
 router.register(r"users", UserViewSet, basename="user")
+router.register(r"plants", PlantViewSet, basename="plant")
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
