@@ -1,2 +1,2 @@
-# django-starter
-A simple and easy to use Django starter.
+# plantara-backend
+Simple web-based plant manager.
