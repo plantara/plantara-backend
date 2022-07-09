@@ -175,6 +175,6 @@ class PlantDetailTestCase(APITestCase, TestMixin):
         # Assert status code is correct
         self.assertEqual(response.status_code, 404)
 
-        # Assert plant is deleted
+        # Assert plant is not deleted
         new_plant_count = Plant.objects.count()
         self.assertEqual(new_plant_count, old_plant_count)
