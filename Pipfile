@@ -9,6 +9,7 @@ django-split-settings = "==1.1.*"
 django-extensions = "==3.1.*"
 django-debug-toolbar = "==3.2.*"
 djangorestframework = "==3.12.*"
+django-jazzmin = "==2.6.*"
 
 [dev-packages]
 flake8 = "*"
@@ -29,3 +30,6 @@ server = "python manage.py runserver"
 migrate = "python manage.py migrate"
 test = "python manage.py test"
 shell = "python manage.py shell_plus --print-sql"
+
+[pipenv]
+allow_prereleases = true
