@@ -19,6 +19,7 @@ from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
 from plantara.contrib.action_types.views import ActionTypeViewSet
+from plantara.contrib.actions.views import ActionViewSet
 from plantara.contrib.plants.views import PlantViewSet
 from plantara.contrib.users.views import ObtainAuthToken, UserViewSet
 
@@ -26,6 +27,7 @@ router = DefaultRouter()
 router.register(r"users", UserViewSet, basename="user")
 router.register(r"plants", PlantViewSet, basename="plant")
 router.register(r"action-type", ActionTypeViewSet, basename="actiontype")
+router.register(r"action", ActionViewSet, basename="action")
 
 
 urlpatterns = [

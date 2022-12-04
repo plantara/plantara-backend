@@ -1,6 +1,7 @@
 from django.contrib.auth import get_user_model
 
 from plantara.contrib.action_types.models import ActionType
+from plantara.contrib.actions.models import Action
 from plantara.contrib.plants.models import Plant
 
 UserModel = get_user_model()
@@ -25,5 +26,12 @@ class TestMixin:
         return ActionType.objects.create(
             name=name,
             user=user or self.user,
+            notes=notes,
+        )
+
+    def create_action(self, type=None, plant=None, notes="Notes"):
+        return Action.objects.create(
+            type=type or self.action_type,
+            plant=plant or self.plant,
             notes=notes,
         )
