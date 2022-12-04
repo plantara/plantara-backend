@@ -1,10 +1,10 @@
-from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+
+from plantara.admin import admin_site
 
 from . import forms, models
 
 
-@admin.register(models.User)
 class UserAdmin(BaseUserAdmin):
     form = forms.CustomUserChangeForm
     add_form = forms.CustomUserCreationForm
@@ -24,3 +24,6 @@ class UserAdmin(BaseUserAdmin):
             },
         ),
     )
+
+
+admin_site.register(models.User, UserAdmin)
